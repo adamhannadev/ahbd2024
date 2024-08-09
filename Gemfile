@@ -65,3 +65,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'jquery-rails'
+gem 'semantic-ui-sass'
