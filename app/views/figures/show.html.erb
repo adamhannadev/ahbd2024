@@ -1,4 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<% if notice %>
+<div class="ui floating message">
+  <div class="header">
+    Notice
+  </div>
+  <p><%= notice %></p>
+</div>
+<% else %>
+<% end %>
 
 <%= render @figure %>
 
