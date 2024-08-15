@@ -1,2 +1,0 @@
-class Figure < ApplicationRecord
-end

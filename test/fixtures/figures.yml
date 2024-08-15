@@ -1,9 +1,0 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  figure_name: Salsa Basic
-  figure_description: Left foot forward, replace weight to right foot, left foot closed.
-
-two:
-  figure_name: Underarm Turn Right
-  figure_description: Left foot forward turning under the raised R-L HH, replace weight to right foot, finish rotation and close left foot to right.
