@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  role: false
+  level: MyString
+  dance: MyString
+  footwork: MyText
+  sfoot: false
+  efoot: false
+  timing: MyString
+  partnering: MyText
+
+two:
+  name: MyString
+  role: false
+  level: MyString
+  dance: MyString
+  footwork: MyText
+  sfoot: false
+  efoot: false
+  timing: MyString
+  partnering: MyText

@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_08_214838) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_15_205749) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "components", force: :cascade do |t|
+    t.string "name"
+    t.boolean "role"
+    t.string "level"
+    t.string "dance"
+    t.text "footwork"
+    t.boolean "sfoot"
+    t.boolean "efoot"
+    t.string "timing"
+    t.text "partnering"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "figures", force: :cascade do |t|
     t.string "figure_name"
