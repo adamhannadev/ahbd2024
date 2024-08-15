@@ -8,4 +8,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # Define the default route to figures/show
+  get '/', to: 'figures#index'
 end
