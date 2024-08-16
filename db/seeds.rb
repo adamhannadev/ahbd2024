@@ -8,7 +8,3 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-
-["Salsa Basic", "Underarm Turn Left", "Underarm Turn Right"].each do |figure|
-    Figure.find_or_create_by!(figure_name: figure)
-end
