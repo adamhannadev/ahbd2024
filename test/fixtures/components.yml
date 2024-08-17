@@ -2,22 +2,18 @@
 
 one:
   name: MyString
-  role: false
+  role: MyString
   level: MyString
   dance: MyString
   footwork: MyText
-  sfoot: false
-  efoot: false
   timing: MyString
-  partnering: MyText
+  partnering: MyString
 
 two:
   name: MyString
-  role: false
+  role: MyString
   level: MyString
   dance: MyString
   footwork: MyText
-  sfoot: false
-  efoot: false
   timing: MyString
-  partnering: MyText
+  partnering: MyString

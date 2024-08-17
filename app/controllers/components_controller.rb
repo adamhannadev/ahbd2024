@@ -65,6 +65,6 @@ class ComponentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def component_params
-      params.require(:component).permit(:name, :role, :level, :dance, :footwork, :sfoot, :efoot, :timing, :partnering)
+      params.require(:component).permit(:name, :role, :level, :dance, :footwork, :timing, :partnering)
     end
 end

@@ -17,7 +17,7 @@ class ComponentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create component" do
     assert_difference("Component.count") do
-      post components_url, params: { component: { dance: @component.dance, efoot: @component.efoot, footwork: @component.footwork, level: @component.level, name: @component.name, partnering: @component.partnering, role: @component.role, sfoot: @component.sfoot, timing: @component.timing } }
+      post components_url, params: { component: { dance: @component.dance, footwork: @component.footwork, level: @component.level, name: @component.name, partnering: @component.partnering, role: @component.role, timing: @component.timing } }
     end
 
     assert_redirected_to component_url(Component.last)
@@ -34,7 +34,7 @@ class ComponentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update component" do
-    patch component_url(@component), params: { component: { dance: @component.dance, efoot: @component.efoot, footwork: @component.footwork, level: @component.level, name: @component.name, partnering: @component.partnering, role: @component.role, sfoot: @component.sfoot, timing: @component.timing } }
+    patch component_url(@component), params: { component: { dance: @component.dance, footwork: @component.footwork, level: @component.level, name: @component.name, partnering: @component.partnering, role: @component.role, timing: @component.timing } }
     assert_redirected_to component_url(@component)
   end
 

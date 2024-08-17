@@ -15,13 +15,11 @@ class ComponentsTest < ApplicationSystemTestCase
     click_on "New component"
 
     fill_in "Dance", with: @component.dance
-    check "Efoot" if @component.efoot
     fill_in "Footwork", with: @component.footwork
     fill_in "Level", with: @component.level
     fill_in "Name", with: @component.name
     fill_in "Partnering", with: @component.partnering
-    check "Role" if @component.role
-    check "Sfoot" if @component.sfoot
+    fill_in "Role", with: @component.role
     fill_in "Timing", with: @component.timing
     click_on "Create Component"
 
@@ -34,13 +32,11 @@ class ComponentsTest < ApplicationSystemTestCase
     click_on "Edit this component", match: :first
 
     fill_in "Dance", with: @component.dance
-    check "Efoot" if @component.efoot
     fill_in "Footwork", with: @component.footwork
     fill_in "Level", with: @component.level
     fill_in "Name", with: @component.name
     fill_in "Partnering", with: @component.partnering
-    check "Role" if @component.role
-    check "Sfoot" if @component.sfoot
+    fill_in "Role", with: @component.role
     fill_in "Timing", with: @component.timing
     click_on "Update Component"
 
