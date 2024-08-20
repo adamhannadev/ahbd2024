@@ -1,13 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Components</h1>
+<h1 class="ui center aligned header">Components</h1>
 
-<div id="components">
+<div id="components" class="ui three cards">
   <% @components.each do |component| %>
     <%= render component %>
-    <p>
-      <%= link_to "Show this component", component %>
-    </p>
   <% end %>
 </div>
 
