@@ -1,6 +1,6 @@
-<%= form_with(model: component) do |form| %>
+<%= form_with(model: component, html: {class: "ui form"})  do |form| %>
   <% if component.errors.any? %>
-    <div style="color: red">
+    <div class="ui warning message">
       <h2><%= pluralize(component.errors.count, "error") %> prohibited this component from being saved:</h2>
 
       <ul>
@@ -28,7 +28,15 @@
 
   <div>
     <%= form.label :dance, style: "display: block" %>
-    <%= form.text_field :dance %>
+      <div class="ui selection dropdown">
+          <input type="hidden" name="component[dance]" id="component_dance">
+          <i class="dropdown icon"></i>
+          <div class="default text">Dance</div>
+          <div class="menu">
+              <div class="item" data-value="Salsa">Salsa</div>
+              <div class="item" data-value="WestCoastSwing">West Coast Swing</div>
+          </div>
+      </div>
   </div>
 
   <div>
@@ -47,6 +55,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "ui button", style: "margin-top:1rem;" %>
   </div>
 <% end %>
