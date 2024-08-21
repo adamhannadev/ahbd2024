@@ -16,9 +16,21 @@
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.label :role, style: "display: block" %>
-    <%= form.text_field :role %>
+  <div clas="inline fields">
+    <label for="role">Role</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= form.radio_button :role, "Leader" %>
+        <%= form.label :leader, "Leader" %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= form.radio_button :role, "Follower" %>
+        <%= form.label :leader, "Follower" %>
+      </div>
+    </div>
+
   </div>
 
   <div>
@@ -51,7 +63,7 @@
 
   <div>
     <%= form.label :partnering, style: "display: block" %>
-    <%= form.text_field :partnering %>
+    <%= form.text_area :partnering %>
   </div>
 
   <div>
