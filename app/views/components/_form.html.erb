@@ -38,6 +38,9 @@
     <%= form.text_field :level %>
   </div>
 
+
+
+
   <div>
     <%= form.label :dance, style: "display: block" %>
       <div class="ui selection dropdown">
@@ -45,8 +48,9 @@
           <i class="dropdown icon"></i>
           <div class="default text">Dance</div>
           <div class="menu">
-              <div class="item" data-value="Salsa">Salsa</div>
-              <div class="item" data-value="WestCoastSwing">West Coast Swing</div>
+            <% ["Salsa", "Bachata", "West Coast Swing"].each do |dance| %>
+              <div class="item" data-value="<%= dance %>"><%= dance %></div>
+            <% end %>
           </div>
       </div>
   </div>

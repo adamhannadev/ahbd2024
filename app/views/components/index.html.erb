@@ -1,4 +1,6 @@
-<p style="color: green"><%= notice %></p>
+<% if notice %>
+<p class="ui message"><%= notice %></p>
+<% end %>
 
 <h1 class="ui center aligned header">Components</h1>
 
@@ -8,4 +10,4 @@
   <% end %>
 </div>
 
-<%= link_to "New component", new_component_path %>
+<%= button_to "New component", new_component_path, class: "ui button", style: "margin-top:1rem;" %>

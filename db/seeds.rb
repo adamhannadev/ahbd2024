@@ -14,7 +14,7 @@ dances = ['Salsa', 'Bachata', 'West Coast Swing', 'Kizomba']
 
 6.times do 
     Component.create(
-    name: Faker::Creature::Animal.name,
+    name: Faker::Creature::Animal.name.capitalize,
     role: Faker::Boolean.boolean ? 'Leader' : 'Follower',
     level: levels[Faker::Number.within(range: 0..9)],
     dance: dances[Faker::Number.within(range: 0..3)],

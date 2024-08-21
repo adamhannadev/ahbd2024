@@ -2,8 +2,8 @@
   <div  id="<%= dom_id component %>" class="ui fluid raised card">
     <div class="content">
       <div class="right floated"><%= component.role + "'s Role" %></div>
-      <div class="header"><%= component.name %></div>
-      <div class="meta center aligned"><%= "#{component.level} #{component.dance}" %></div>
+      <div class="header"><%= link_to component.name, component %></div>
+      <div class="meta"><%= "#{component.level} #{component.dance}" %></div>
       <div class="description">
         <p>
           <strong>Footwork:</strong>
@@ -20,8 +20,5 @@
           <%= component.partnering %>
         </p>
       </div>
-    </div>
-    <div class="extra content">
-      <%= button_to semantic_icon("folder open"), component_path(component), { method: "get"} %>
     </div>
   </div>
