@@ -23,3 +23,23 @@ dances = ['Salsa', 'Bachata', 'West Coast Swing', 'Kizomba']
     partnering: Faker::Lorem.paragraph
  )
 end
+
+positions = [
+    "Forward",
+    "Side",
+    "Back",
+    "Replace",
+    "Close",
+    "Forward and Across",
+    "Back and Across",
+    "Forward and Slightly Side",
+    "Diagonally Forward",
+    "Side and Slightly Forward",
+    "Side and Slightly Back",
+    "Back and Slightly Side",
+    "Diagonally Back"
+]
+
+positions.each do |p|
+    Step.create(position: p)
+end
