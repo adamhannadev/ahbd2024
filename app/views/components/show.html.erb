@@ -1,4 +1,6 @@
-<p style="color: green"><%= notice %></p>
+<% if notice %>
+<p class="ui message"><i class="icon close"></i><%= notice %></p>
+<% end %>
 
 <%= render @component %>
 
