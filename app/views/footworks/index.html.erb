@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Footworks</h1>
+
+<div id="footworks">
+  <% @footworks.each do |footwork| %>
+    <%= render footwork %>
+    <p>
+      <%= link_to "Show this footwork", footwork %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New footwork", new_footwork_path %>

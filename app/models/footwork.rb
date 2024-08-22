@@ -1,0 +1,2 @@
+class Footwork < ApplicationRecord
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_21_194520) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_22_224624) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,17 +19,41 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_21_194520) do
     t.string "role"
     t.string "level"
     t.string "dance"
-    t.text "footwork"
     t.string "timing"
     t.text "partnering"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "steps", force: :cascade do |t|
+  create_table "components_steps", id: false, force: :cascade do |t|
+    t.bigint "component_id", null: false
+    t.bigint "step_id", null: false
+    t.index ["component_id", "step_id"], name: "index_components_steps_on_component_id_and_step_id"
+    t.index ["step_id", "component_id"], name: "index_components_steps_on_step_id_and_component_id"
+  end
+
+  create_table "foot_positions", force: :cascade do |t|
     t.string "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "footworks", force: :cascade do |t|
+    t.string "footwork"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "steps", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "count"
+    t.bigint "foot_position_id", null: false
+    t.bigint "footwork_id", null: false
+    t.index ["foot_position_id"], name: "index_steps_on_foot_position_id"
+    t.index ["footwork_id"], name: "index_steps_on_footwork_id"
+  end
+
+  add_foreign_key "steps", "foot_positions"
+  add_foreign_key "steps", "footworks"
 end

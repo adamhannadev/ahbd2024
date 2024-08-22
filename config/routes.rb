@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :footworks
+  resources :foot_positions
   resources :steps
   resources :components
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

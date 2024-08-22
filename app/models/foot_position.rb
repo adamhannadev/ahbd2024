@@ -1,0 +1,2 @@
+class FootPosition < ApplicationRecord
+end

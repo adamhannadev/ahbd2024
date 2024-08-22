@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @foot_position %>
+
+<div>
+  <%= link_to "Edit this foot position", edit_foot_position_path(@foot_position) %> |
+  <%= link_to "Back to foot positions", foot_positions_path %>
+
+  <%= button_to "Destroy this foot position", @foot_position, method: :delete %>
+</div>
