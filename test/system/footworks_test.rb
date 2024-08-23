@@ -14,7 +14,7 @@ class FootworksTest < ApplicationSystemTestCase
     visit footworks_url
     click_on "New footwork"
 
-    fill_in "Footwork", with: @footwork.footwork
+    fill_in "Name", with: @footwork.name
     click_on "Create Footwork"
 
     assert_text "Footwork was successfully created"
@@ -25,7 +25,7 @@ class FootworksTest < ApplicationSystemTestCase
     visit footwork_url(@footwork)
     click_on "Edit this footwork", match: :first
 
-    fill_in "Footwork", with: @footwork.footwork
+    fill_in "Name", with: @footwork.name
     click_on "Update Footwork"
 
     assert_text "Footwork was successfully updated"

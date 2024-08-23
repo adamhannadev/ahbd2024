@@ -1,7 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  position: MyString
+  count: MyString
+  foot: MyString
+  foot_position: one
+  footwork: one
 
 two:
-  position: MyString
+  count: MyString
+  foot: MyString
+  foot_position: two
+  footwork: two

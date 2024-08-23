@@ -17,7 +17,7 @@ class FootPositionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create foot_position" do
     assert_difference("FootPosition.count") do
-      post foot_positions_url, params: { foot_position: { position: @foot_position.position } }
+      post foot_positions_url, params: { foot_position: { name: @foot_position.name } }
     end
 
     assert_redirected_to foot_position_url(FootPosition.last)
@@ -34,7 +34,7 @@ class FootPositionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update foot_position" do
-    patch foot_position_url(@foot_position), params: { foot_position: { position: @foot_position.position } }
+    patch foot_position_url(@foot_position), params: { foot_position: { name: @foot_position.name } }
     assert_redirected_to foot_position_url(@foot_position)
   end
 

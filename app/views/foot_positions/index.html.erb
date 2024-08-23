@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Foot positions</h1>
+
+<div id="foot_positions">
+  <% @foot_positions.each do |foot_position| %>
+    <%= render foot_position %>
+    <p>
+      <%= link_to "Show this foot position", foot_position %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New foot position", new_foot_position_path %>

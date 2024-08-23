@@ -14,7 +14,7 @@ class FootPositionsTest < ApplicationSystemTestCase
     visit foot_positions_url
     click_on "New foot position"
 
-    fill_in "Position", with: @foot_position.position
+    fill_in "Name", with: @foot_position.name
     click_on "Create Foot position"
 
     assert_text "Foot position was successfully created"
@@ -25,7 +25,7 @@ class FootPositionsTest < ApplicationSystemTestCase
     visit foot_position_url(@foot_position)
     click_on "Edit this foot position", match: :first
 
-    fill_in "Position", with: @foot_position.position
+    fill_in "Name", with: @foot_position.name
     click_on "Update Foot position"
 
     assert_text "Foot position was successfully updated"

@@ -17,7 +17,7 @@ class FootworksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create footwork" do
     assert_difference("Footwork.count") do
-      post footworks_url, params: { footwork: { footwork: @footwork.footwork } }
+      post footworks_url, params: { footwork: { name: @footwork.name } }
     end
 
     assert_redirected_to footwork_url(Footwork.last)
@@ -34,7 +34,7 @@ class FootworksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update footwork" do
-    patch footwork_url(@footwork), params: { footwork: { footwork: @footwork.footwork } }
+    patch footwork_url(@footwork), params: { footwork: { name: @footwork.name } }
     assert_redirected_to footwork_url(@footwork)
   end
 
