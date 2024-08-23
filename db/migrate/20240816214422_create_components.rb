@@ -5,10 +5,7 @@ class CreateComponents < ActiveRecord::Migration[7.1]
       t.string :role
       t.string :level
       t.string :dance
-      t.text :footwork
-      t.string :timing
       t.text :partnering
-
       t.timestamps
     end
   end

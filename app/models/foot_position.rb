@@ -1,2 +1,0 @@
-class FootPosition < ApplicationRecord
-end
