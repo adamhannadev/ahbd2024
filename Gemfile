@@ -69,3 +69,4 @@ end
 gem 'jquery-rails'
 gem 'semantic-ui-sass'
 gem 'faker'
+gem 'hirb'

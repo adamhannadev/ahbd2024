@@ -5,16 +5,25 @@
       <div class="header"><%= link_to component.name, component %></div>
       <div class="meta"><%= "#{component.level} #{component.dance}" %></div>
       <div class="description">
-      
-        <p>
-          <strong>Timing:</strong>
-          <%= component.timing %>
-        </p>
-      
-        <p>
-          <strong>Partnering:</strong>
-          <%= component.partnering %>
-        </p>
+        
+        <table class="ui table">
+          <thead>
+            <th>Count</th>
+            <th>Foot</th>
+            <th>Foot Position</th>
+            <th>Footwork</th>
+          </thead>
+          <tbody>
+            <% component.steps.each do |s| %>
+            <tr>
+              <td><%= s.count%></td>
+              <td><%= s.foot %></td>
+              <td><%= s.foot_position.name %></td>
+              <td><%= s.footwork.name %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
