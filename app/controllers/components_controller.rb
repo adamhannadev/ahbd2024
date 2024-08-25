@@ -12,6 +12,7 @@ class ComponentsController < ApplicationController
 
   # GET /components/new
   def new
+    
     @component = Component.new
   end
 
@@ -22,7 +23,8 @@ class ComponentsController < ApplicationController
   # POST /components or /components.json
   def create
     @component = Component.new(component_params)
-
+    @steps = Step.all
+    
     respond_to do |format|
       if @component.save
         format.html { redirect_to component_url(@component), notice: "Component was successfully created." }
@@ -65,6 +67,6 @@ class ComponentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def component_params
-      params.require(:component).permit(:name, :role, :level, :dance, :footwork, :timing, :partnering)
+      params.require(:component).permit(:name, :role, :level, :dance, :footwork, :timing, :partnering, :step_ids)
     end
 end

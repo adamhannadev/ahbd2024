@@ -1,4 +1,4 @@
-<%= form_with(model: component, html: {class: "ui form"})  do |form| %>
+<%= form_with(model: @component, html: {class: "ui form"})  do |form| %>
   <% if component.errors.any? %>
     <div class="ui warning message">
       <h2><%= pluralize(component.errors.count, "error") %> prohibited this component from being saved:</h2>
@@ -39,7 +39,7 @@
   </div>
 
 
-
+<div data-controller="steps" data-step-target="output"></div>
 
   <div>
     <%= form.label :dance, style: "display: block" %>
@@ -48,28 +48,16 @@
           <i class="dropdown icon"></i>
           <div class="default text">Dance</div>
           <div class="menu">
-            <% ["Salsa", "Bachata", "West Coast Swing"].each do |dance| %>
+            <% ["Salsa", "Bachata", "West Coast Swing", "Kizomba"].each do |dance| %>
               <div class="item" data-value="<%= dance %>"><%= dance %></div>
             <% end %>
           </div>
       </div>
   </div>
 
-  <div>
-    <%= form.label :footwork, style: "display: block" %>
-    <%= form.text_area :footwork %>
-  </div>
 
-  <div>
-    <%= form.label :timing, style: "display: block" %>
-    <%= form.text_field :timing %>
-  </div>
 
-  <div>
-    <%= form.label :partnering, style: "display: block" %>
-    <%= form.text_area :partnering %>
-  </div>
-
+ 
   <div>
     <%= form.submit class: "ui button", style: "margin-top:1rem;" %>
   </div>

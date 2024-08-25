@@ -4,10 +4,27 @@
 
 <h1 class="ui center aligned header">Components</h1>
 
-<div id="components" class="ui three cards">
-  <% @components.each do |component| %>
-    <%= render component %>
+<table class="ui table">
+<thead>
+  <th>Name</th>
+  <th>Dance</th>
+  <th>Role</th>
+  <th>Level</th>
+  <th></th>
+  <!-- <th></th> -->
+</thead>
+<tbody>
+  <% @components.each do |c| %>
+  <tr>
+    <td><%= c.name %></td>
+    <td><%= c.dance %></td>
+    <td><%= c.role %></td>
+    <td><%= c.level %></td> 
+    <td><%= link_to "Edit", component_path(c) %></td>
+    <!-- <td> <%= link_to 'Delete', component_path(c), method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+  </tr>
   <% end %>
-</div>
+</tbody>
+</table>
 
-<%= button_to "New component", new_component_path, class: "ui button", style: "margin-top:1rem;" %>
+<%= button_to "New component", new_component_path, method: :get, class: "ui button", style: "margin-top:1rem;" %>
