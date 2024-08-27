@@ -4,10 +4,6 @@ class StepsController < ApplicationController
   # GET /steps or /steps.json
   def index
     @steps = Step.all
-    respond_to do |format|
-        format.html
-        format.json { render json: @steps }
-    end
   end
 
   # GET /steps/1 or /steps/1.json
@@ -21,10 +17,6 @@ class StepsController < ApplicationController
 
   # GET /steps/1/edit
   def edit
-    @steps = Step.all
-    respond_to do |format|
-        format.json { render json: @steps }
-    end
   end
 
   # POST /steps or /steps.json
@@ -73,6 +65,6 @@ class StepsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def step_params
-      params.require(:step).permit(:count, :foot, :foot_position_id, :footwork_id)
+      params.require(:step).permit(:count, :foot, :foot_position_id, :footwork_id, :new_foot_position)
     end
 end

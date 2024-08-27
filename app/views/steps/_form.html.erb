@@ -23,12 +23,14 @@
 
   <div>
     <%= form.label :foot_position_id, style: "display: block" %>
-    <%= form.text_field :foot_position_id %>
+    <%= form.collection_select(:foot_position_id, FootPosition.all, :id, :name, prompt: 'Please select.') %>
+    <%= form.label :new_foot_position %>
+    <%= form.text_field :new_foot_position, placeholder: "Add new foot position." %>
   </div>
 
   <div>
     <%= form.label :footwork_id, style: "display: block" %>
-    <%= form.text_field :footwork_id %>
+    <%= form.collection_select(:footwork_id, Footwork.all, :id, :name, prompt: 'Please select.') %>
   </div>
 
   <div>

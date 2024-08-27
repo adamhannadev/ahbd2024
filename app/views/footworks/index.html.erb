@@ -3,12 +3,26 @@
 <h1>Footworks</h1>
 
 <div id="footworks">
-  <% @footworks.each do |footwork| %>
-    <%= render footwork %>
-    <p>
-      <%= link_to "Show this footwork", footwork %>
-    </p>
+<table class="ui table" data-controller="footworks">
+  <thead>
+    <th>
+      Name
+    </th>
+    <th>
+    </th>
+    <th>
+    </th>
+  </thead>
+<tbody>
+  <% @footworks.each do |f| %>
+  <tr>
+    <td><%= f.name %></td>
+    <td>Edit</td>
+    <td data-footworks-target="db">Delete</td>
+  </tr>
   <% end %>
+</tbody>
+</table>
 </div>
 
 <%= link_to "New footwork", new_footwork_path %>
