@@ -15,10 +15,10 @@
   </thead>
 <tbody>
   <% @footworks.each do |f| %>
-  <tr>
+  <tr data-action="mouseover->footworks#active mouseout->footworks#inactive">
     <td><%= f.name %></td>
     <td>Edit</td>
-    <td data-footworks-target="db">Delete</td>
+    <td>Delete</td>
   </tr>
   <% end %>
 </tbody>
