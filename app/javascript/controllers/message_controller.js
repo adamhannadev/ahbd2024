@@ -6,7 +6,9 @@ export default class extends Controller {
   static targets = ["message"]
 
   connect() {
-    console.log(this.element);
+  }
+
+  close(){
     fadeOut(this.element);
   }
 }
