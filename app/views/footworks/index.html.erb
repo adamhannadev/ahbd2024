@@ -1,4 +1,6 @@
-<p style="color: green"><%= notice %></p>
+<% if notice %>
+<p class="ui message" data-controller="message" date-message-target="message" data-action="click->message#close"><%= notice %></p>
+<% end %>
 
 <h1>Footworks</h1>
 
@@ -18,7 +20,9 @@
   <tr data-action="mouseover->footworks#active mouseout->footworks#inactive">
     <td><%= f.name %></td>
     <td>Edit</td>
-    <td>Delete</td>
+
+    <!-- TODO Add referential integrity for cascading delete in other models. -->
+    <td><%= button_to "Delete", footwork_path(f), method: :delete, class: "ui button", data: { confirm: "Are you sure?" } %></td>
   </tr>
   <% end %>
 </tbody>
