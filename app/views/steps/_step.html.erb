@@ -19,8 +19,8 @@
       <tr>
         <td><%= step.count %></td>
         <td><%= step.foot %> Foot</td>
-        <td><%= step.foot_position.name %></td>
-        <td><%= step.footwork.name %></td>
+        <td><% if step.foot_position %><%= step.foot_position.name %><% end %></td>
+        <td><% if step.footwork %><%= step.footwork.name %><% end %></td>
       </tr>
     </tbody>
   </table>

@@ -65,6 +65,6 @@ class StepsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def step_params
-      params.require(:step).permit(:count, :foot, :foot_position_id, :footwork_id, :new_foot_position)
+      params.require(:step).permit(:count, :foot, :foot_position_id, :footwork_id)
     end
 end
