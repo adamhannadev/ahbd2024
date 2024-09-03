@@ -21,7 +21,6 @@
     <td><%= f.name %></td>
     <td>Edit</td>
 
-    <!-- TODO Add referential integrity for cascading delete in other models. -->
     <td><%= button_to "Delete", footwork_path(f), method: :delete, class: "ui button", data: { confirm: "Are you sure?" } %></td>
   </tr>
   <% end %>

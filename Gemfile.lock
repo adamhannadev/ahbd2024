@@ -103,7 +103,7 @@ GEM
     erubi (1.13.0)
     faker (3.4.2)
       i18n (>= 1.8.11, < 2)
-    ffi (1.17.0)
+    ffi (1.17.0-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hirb (0.7.3)
@@ -271,7 +271,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.0.2p107
+   ruby 3.2.4p170
 
 BUNDLED WITH
    2.2.22
