@@ -5,15 +5,11 @@ one:
   role: MyString
   level: MyString
   dance: MyString
-  footwork: MyText
-  timing: MyString
-  partnering: MyString
+
 
 two:
   name: MyString
   role: MyString
   level: MyString
   dance: MyString
-  footwork: MyText
-  timing: MyString
-  partnering: MyString
+
