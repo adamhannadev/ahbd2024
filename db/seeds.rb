@@ -46,8 +46,8 @@ end
     Step.create(
         count: rand(1..3),
         foot: rand(2) == 1 ? "Left" : "Right",
-        footwork: Footwork.find(rand(1..8)),
-        foot_position: FootPosition.find(rand(1..9))
+        footwork: Footwork.find(rand(1..8)).name,
+        foot_position: FootPosition.find(rand(1..9)).name
     )
 end
 

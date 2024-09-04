@@ -22,13 +22,13 @@
   </div>
 
   <div>
-    <%= form.label :foot_position_id, style: "display: block" %>
-    <%= form.collection_select(:foot_position_id, FootPosition.all, :id, :name, prompt: 'Please select.') %>
+    <%= form.label :foot_position, style: "display: block" %>
+    <%= form.collection_select(:foot_position, FootPosition.all, :name, :name, prompt: 'Please select.') %>
   </div>
 
   <div>
-    <%= form.label :footwork_id, style: "display: block" %>
-    <%= form.collection_select(:footwork_id, Footwork.all, :id, :name, prompt: 'Please select.') %>
+    <%= form.label :footwork, style: "display: block" %>
+    <%= form.collection_select(:footwork, Footwork.all, :name, :name, prompt: 'Please select.') %>
   </div>
 
   <div>
