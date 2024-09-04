@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_24_041318) do
     t.string "role"
     t.string "level"
     t.string "dance"
+    t.text "partnering"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,14 +44,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_24_041318) do
   create_table "steps", force: :cascade do |t|
     t.string "count"
     t.string "foot"
+    t.string "foot_position"
+    t.string "footwork"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "footwork_id"
-    t.bigint "foot_position_id"
-    t.index ["foot_position_id"], name: "index_steps_on_foot_position_id"
-    t.index ["footwork_id"], name: "index_steps_on_footwork_id"
   end
 
-  add_foreign_key "steps", "foot_positions"
-  add_foreign_key "steps", "footworks"
 end
