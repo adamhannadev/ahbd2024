@@ -9,6 +9,7 @@
   <th>Role</th>
   <th>Level</th>
   <th></th>
+  <th></th>
   <!-- <th></th> -->
 </thead>
 <tbody>
@@ -18,8 +19,8 @@
     <td><%= c.dance %></td>
     <td><%= c.role %></td>
     <td><%= c.level %></td> 
-    <td><%= link_to "Edit", component_path(c) %></td>
-    <!-- <td> <%= link_to 'Delete', component_path(c), method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+    <td><%= link_to "Edit", component_path(c), class: "ui button" %></td>
+    <td><%= button_to 'Delete', component_path(c), method: :delete, class: "ui button" %></td>
   </tr>
   <% end %>
 </tbody>
