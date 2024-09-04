@@ -3,11 +3,7 @@ import { fadeOut } from "../utilities/fade_out";
 
 // Connects to data-controller="message"
 export default class extends Controller {
-  static targets = ["message"]
-
-  connect() {
-  }
-
+  static targets = ["fadeItem"]
   close(){
     fadeOut(this.element);
   }
