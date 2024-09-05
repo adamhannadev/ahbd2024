@@ -14,7 +14,7 @@
 </thead>
 <tbody>
   <% @components.each do |c| %>
-  <tr data-action="mouseover->active-table#active mouseout->active-table#inactive">
+  <tr id="<%= c.id %>" data-model="<%= @components.model_name.to_s.downcase.pluralize %>" data-action="mouseover->active-table#active mouseout->active-table#inactive click->active-table#show" >
     <td><%= c.name %></td>
     <td><%= c.dance %></td>
     <td><%= c.role %></td>

@@ -15,7 +15,7 @@
   </thead>
 <tbody>
   <% @footworks.each do |f| %>
-  <tr data-action="mouseover->active-table#active mouseout->active-table#inactive">
+  <tr id="<%= f.id %>" data-model="<%= f.model_name.to_s.downcase.pluralize %>" data-action="click->active-table#show mouseover->active-table#active mouseout->active-table#inactive">
     <td><%= f.name %></td>
     <td><%= link_to "Edit", footwork_path(f), class: "ui button" %></td>
     <td><%= button_to "Delete", footwork_path(f), method: :delete, class: "ui button" %></td>

@@ -81,7 +81,8 @@ dnc = [
             Step.first,
             Step.second,
             Step.third
-        ]
+        ],
+        partnering: Faker::Lorem::paragraph
     )
 end
     

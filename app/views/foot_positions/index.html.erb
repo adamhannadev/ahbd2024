@@ -15,7 +15,7 @@
     </thead>
   <tbody>
     <% @foot_positions.each do |f| %>
-    <tr data-action="mouseover->active-table#active mouseout->active-table#inactive">
+    <tr id="<%= f.id %>" data-model="foot_positions" data-action="click->active-table#show mouseover->active-table#active mouseout->active-table#inactive">
       <td><%= f.name %></td>
       <td><%= link_to "Edit", foot_position_path(f), class: "ui button" %></td>
       <td><%= button_to "Delete", foot_position_path(f), method: :delete, class: "ui button" %></td>

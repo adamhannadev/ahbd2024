@@ -19,7 +19,7 @@
     </thead>
   <tbody>
     <% @steps.each do |s| %>
-    <tr data-action="mouseover->active-table#active mouseout->active-table#inactive">
+    <tr id="<%= s.id %>" data-model="<%= s.model_name.to_s.downcase.pluralize %>" data-action="click->active-table#show mouseover->active-table#active mouseout->active-table#inactive">
       <td><%= s.count %></td>
       <td><%= s.foot + " Foot " + s.foot_position %></td>
       <td><%= s.footwork %></td>
@@ -31,4 +31,4 @@
   </table>
 </div>
 
-<%= link_to "New step", new_step_path %>
+<%= link_to "New step", new_step_path, class: "ui button", style: "margin-top:1rem;" %>
