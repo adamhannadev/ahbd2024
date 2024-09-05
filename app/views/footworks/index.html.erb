@@ -3,7 +3,7 @@
 <h1>Footworks</h1>
 
 <div id="footworks">
-<table class="ui table" data-controller="footworks">
+<table class="ui table" data-controller="active-table">
   <thead>
     <th>
       Name
@@ -15,7 +15,7 @@
   </thead>
 <tbody>
   <% @footworks.each do |f| %>
-  <tr data-action="mouseover->footworks#active mouseout->footworks#inactive">
+  <tr data-action="mouseover->active-table#active mouseout->active-table#inactive">
     <td><%= f.name %></td>
     <td>Edit</td>
 

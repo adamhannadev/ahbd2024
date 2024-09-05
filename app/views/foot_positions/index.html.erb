@@ -3,12 +3,27 @@
 <h1>Foot positions</h1>
 
 <div id="foot_positions">
-  <% @foot_positions.each do |foot_position| %>
-    <%= render foot_position %>
-    <p>
-      <%= link_to "Show this foot position", foot_position %>
-    </p>
-  <% end %>
-</div>
+  <table class="ui table" data-controller="active-table">
+    <thead>
+      <th>
+        Name
+      </th>
+      <th>
+      </th>
+      <th>
+      </th>
+    </thead>
+  <tbody>
+    <% @foot_positions.each do |f| %>
+    <tr data-action="mouseover->active-table#active mouseout->active-table#inactive">
+      <td><%= f.name %></td>
+      <td>Edit</td>
+  
+      <td><%= button_to "Delete", footwork_path(f), method: :delete, class: "ui button" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
+  </div>
 
 <%= link_to "New foot position", new_foot_position_path %>
