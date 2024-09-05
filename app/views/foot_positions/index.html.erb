@@ -1,6 +1,6 @@
 <%= render "shared/message" %>
 
-<h1>Foot positions</h1>
+<h1>Foot Positions</h1>
 
 <div id="foot_positions">
   <table class="ui table" data-controller="active-table">
@@ -17,13 +17,12 @@
     <% @foot_positions.each do |f| %>
     <tr data-action="mouseover->active-table#active mouseout->active-table#inactive">
       <td><%= f.name %></td>
-      <td>Edit</td>
-  
-      <td><%= button_to "Delete", footwork_path(f), method: :delete, class: "ui button" %></td>
+      <td><%= link_to "Edit", foot_position_path(f), class: "ui button" %></td>
+      <td><%= button_to "Delete", foot_position_path(f), method: :delete, class: "ui button" %></td>
     </tr>
     <% end %>
   </tbody>
   </table>
   </div>
 
-<%= link_to "New foot position", new_foot_position_path %>
+<%= link_to "New foot position", new_foot_position_path, class: "ui button", style: "margin-top:1rem;" %>

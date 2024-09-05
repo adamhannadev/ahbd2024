@@ -3,12 +3,32 @@
 <h1>Steps</h1>
 
 <div id="steps">
-  <% @steps.each do |step| %>
-    <%= render step %>
-    <p>
-      <%= link_to "Show this step", step %>
-    </p>
-  <% end %>
+  <table class="ui table" data-controller="active-table">
+    <thead>
+      <th>
+        Count
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Footwork
+      </th>
+      <th></th>
+      <th></th>
+    </thead>
+  <tbody>
+    <% @steps.each do |s| %>
+    <tr data-action="mouseover->active-table#active mouseout->active-table#inactive">
+      <td><%= s.count %></td>
+      <td><%= s.foot + " Foot " + s.foot_position %></td>
+      <td><%= s.footwork %></td>
+      <td><%= link_to "Edit", step_path(s), class: "ui button" %></td>
+      <td><%= button_to "Delete", step_path(s), method: :delete, class: "ui button" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
 </div>
 
 <%= link_to "New step", new_step_path %>

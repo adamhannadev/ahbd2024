@@ -17,8 +17,7 @@
   <% @footworks.each do |f| %>
   <tr data-action="mouseover->active-table#active mouseout->active-table#inactive">
     <td><%= f.name %></td>
-    <td>Edit</td>
-
+    <td><%= link_to "Edit", footwork_path(f), class: "ui button" %></td>
     <td><%= button_to "Delete", footwork_path(f), method: :delete, class: "ui button" %></td>
   </tr>
   <% end %>
@@ -26,4 +25,4 @@
 </table>
 </div>
 
-<%= link_to "New footwork", new_footwork_path %>
+<%= link_to "New footwork", new_footwork_path, class: "ui button", style: "margin-top:1rem;" %>

@@ -2,7 +2,7 @@
 
 <h1 class="ui center aligned header">Components</h1>
 
-<table class="ui table">
+<table class="ui table" data-controller="active-table">
 <thead>
   <th>Name</th>
   <th>Dance</th>
@@ -14,7 +14,7 @@
 </thead>
 <tbody>
   <% @components.each do |c| %>
-  <tr>
+  <tr data-action="mouseover->active-table#active mouseout->active-table#inactive">
     <td><%= c.name %></td>
     <td><%= c.dance %></td>
     <td><%= c.role %></td>
