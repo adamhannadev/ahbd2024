@@ -1,4 +1,4 @@
-<%= form_with(model: step) do |form| %>
+<%= form_with(model: step, class: "ui form") do |form| %>
   <% if step.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(step.errors.count, "error") %> prohibited this step from being saved:</h2>
@@ -11,27 +11,36 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="field">
     <%= form.label :count, style: "display: block" %>
     <%= form.text_field :count %>
   </div>
-
-  <div>
-    <%= form.label :foot, style: "display: block" %>
-    <%= form.text_field :foot %>
+<div class="inline fields">
+  <div class="field">
+    <div class="ui radio checkbox"></div>
+    <%= form.label :foot, "Left Foot" %>
+    <%= form.radio_button :foot, "Left Foot" %>
   </div>
 
-  <div>
+  <div class="field">
+    <div class="ui radio checkbox"></div>
+    <%= form.label :foot, "Right Foot" %>
+    <%= form.radio_button :foot, "Right Foot" %>
+  </div>
+</div>
+
+
+  <div class="field">
     <%= form.label :foot_position, style: "display: block" %>
     <%= form.collection_select(:foot_position, FootPosition.all, :name, :name, prompt: 'Please select.') %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :footwork, style: "display: block" %>
     <%= form.collection_select(:footwork, Footwork.all, :name, :name, prompt: 'Please select.') %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="field">
+    <%= form.submit class: "ui button" %>
   </div>
 <% end %>

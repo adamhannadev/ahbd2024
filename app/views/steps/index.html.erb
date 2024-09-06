@@ -21,7 +21,7 @@
     <% @steps.each do |s| %>
     <tr id="<%= s.id %>" data-model="<%= s.model_name.to_s.downcase.pluralize %>" data-action="click->active-table#show mouseover->active-table#active mouseout->active-table#inactive">
       <td><%= s.count %></td>
-      <td><%= s.foot + " Foot " + s.foot_position %></td>
+      <td><%= s.foot + " " + s.foot_position %></td>
       <td><%= s.footwork %></td>
       <td><%= link_to "Edit", step_path(s), class: "ui button" %></td>
       <td><%= button_to "Delete", step_path(s), method: :delete, class: "ui button" %></td>
