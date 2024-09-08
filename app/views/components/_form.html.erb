@@ -64,12 +64,14 @@
     <thead>
       <th>Count</th>
       <th>Description</th>
+      <th></th>
     </thead>
     <tbody>
       <% @component.steps.take(10).each do |s| %>
       <tr>
         <td><%= s.count %></td>
         <td><%= s.description %></td>
+        <td><%= link_to "Edit", step_path(s), class: "ui button" %></td>
       </tr>
       <% end %>
     </tbody>
