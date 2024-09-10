@@ -1,4 +1,4 @@
-<%= form_with(model: @component, class: "ui form")  do |form| %>
+<%= form_with(model: @component, local: true, class: "ui form")  do |form| %>
   <% if component.errors.any? %>
     <div class="ui warning message">
       <h2><%= pluralize(component.errors.count, "error") %> prohibited this component from being saved:</h2>
@@ -54,25 +54,50 @@
           </div>
       </div>
   </div>
- 
-  <div class="field">
-    <%= form.submit class: "ui button", style: "margin-top:1rem;" %>
-  </div>
-<% end %>
 
+  <h3>Steps</h3>
   <table class="ui table">
     <thead>
       <th>Count</th>
       <th>Description</th>
-      <th></th>
     </thead>
     <tbody>
-      <% @component.steps.take(10).each do |s| %>
+      <% @component.steps.each do |s| %>
       <tr>
-        <td><%= s.count %></td>
+        <td><%= s.count%></td>
         <td><%= s.description %></td>
-        <td><%= link_to "Edit", step_path(s), class: "ui button" %></td>
       </tr>
       <% end %>
     </tbody>
-  </table>  
+  </table>
+
+  <%= form.label :steps %>
+  <div class="ui four cards">
+  <%= form.fields_for :steps do |step_form| %>
+    <div class="card">
+      <div class="content">
+        <div class="header"></div>
+        <div class="description">
+          <%= step_form.label :count %>
+          <%= step_form.text_field :count %>
+          <%= step_form.label :foot %>
+          <%= step_form.text_field :foot %>
+          <%= step_form.label :foot_position %>
+          <%= form.collection_select :foot_position_id, FootPosition.all, :id, :name %>
+          <%= step_form.label :footwork %>
+          <%= form.collection_select :footwork_id, Footwork.all, :id, :name %>
+        </div>
+      </div>
+      <div class="ui bottom attached button">
+        <%= step_form.check_box :_destroy %>
+        <%= step_form.label :_destroy, "Remove" %>
+      </div>
+    </div>  
+    <% end %>  
+  </div>
+ 
+
+  <div class="field">
+    <%= form.submit class: "ui button", style: "margin-top:1rem;" %>
+  </div>
+<% end %>

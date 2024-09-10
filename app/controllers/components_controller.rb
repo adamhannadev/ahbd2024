@@ -12,7 +12,6 @@ class ComponentsController < ApplicationController
 
   # GET /components/new
   def new
-    
     @component = Component.new
   end
 
@@ -23,7 +22,6 @@ class ComponentsController < ApplicationController
   # POST /components or /components.json
   def create
     @component = Component.new(component_params)
-    @steps = Step.all
     
     respond_to do |format|
       if @component.save
@@ -67,6 +65,6 @@ class ComponentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def component_params
-      params.require(:component).permit(:name, :role, :level, :dance, :footwork, :timing, :partnering, :step_ids)
+      params.require(:component).permit(:name, :role, :level, :dance, :footwork, :timing, :partnering, steps_attributes: [:id, :count, :description, :_destroy])
     end
 end
