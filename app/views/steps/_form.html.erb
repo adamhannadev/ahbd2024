@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :component_id, style: "display: block" %>
+    <%= form.collection_select(:component_id, Component.all, :id, :name, prompt: 'Please select.') %>
+  </div>
+
+  <div class="field">
     <%= form.label :count, style: "display: block" %>
     <%= form.text_field :count %>
   </div>

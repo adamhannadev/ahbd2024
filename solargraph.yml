@@ -1,0 +1,15 @@
+---
+include:
+  - "**/*.rb"
+  - "**/*.rake"
+  - "**/*.erb"
+  - "**/*.haml"
+  - "**/*.slim"
+exclude:
+  - "log/**/*"
+  - "tmp/**/*"
+  - "vendor/**/*"
+require: []
+domains: []
+reporters: []
+plugins: []

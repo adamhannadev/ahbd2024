@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_24_041318) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_11_184018) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,11 +22,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_24_041318) do
     t.text "partnering"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "components_steps", id: false, force: :cascade do |t|
-    t.bigint "component_id", null: false
-    t.bigint "step_id", null: false
   end
 
   create_table "foot_positions", force: :cascade do |t|
@@ -48,6 +43,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_24_041318) do
     t.string "footwork"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "component_id", null: false
+    t.index ["component_id"], name: "index_steps_on_component_id"
   end
 
+  add_foreign_key "steps", "components"
 end
