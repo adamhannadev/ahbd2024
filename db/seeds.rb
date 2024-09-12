@@ -41,16 +41,6 @@ fp.each do |f|
     FootPosition.create(name: f)
 end
 
-# Create some mock Steps.
-6.times do
-    Step.create(
-        count: rand(1..3),
-        foot: rand(2) == 1 ? "Left" : "Right",
-        footwork: Footwork.find(rand(1..8)).name,
-        foot_position: FootPosition.find(rand(1..9)).name
-    )
-end
-
 # Create some mock Components.
 
 ls = [
@@ -77,12 +67,18 @@ dnc = [
         role: rand(2) == 1 ? "Leader" : "Follower",
         level: ls[rand(7)],
         dance: dnc[rand(3)],
-        steps: [
-            Step.first,
-            Step.second,
-            Step.third
-        ],
         partnering: Faker::Lorem::paragraph
     )
 end
     
+
+# Create some mock Steps.
+6.times do
+    Step.create(
+        count: rand(1..3),
+        foot: rand(2) == 1 ? "Left" : "Right",
+        footwork: Footwork.find(rand(1..8)).name,
+        foot_position: FootPosition.find(rand(1..9)).name,
+        component: Component.find(rand(Component.first.id..Component.last.id))
+    )
+end
