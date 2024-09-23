@@ -13,6 +13,7 @@ class ComponentsController < ApplicationController
   # GET /components/new
   def new
     @component = Component.new
+    @component.steps.build
   end
 
   # GET /components/1/edit
@@ -60,11 +61,12 @@ class ComponentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_component
-      @component = Component.find(params[:id])
+    @component = Component.find(params[:id])
+    @component.steps.build if @component.steps.empty?
     end
 
     # Only allow a list of trusted parameters through.
     def component_params
-      params.require(:component).permit(:name, :role, :level, :dance, :footwork, :timing, :partnering, steps_attributes: [:id, :count, :description, :_destroy])
+      params.require(:component).permit(:name, :role, :level, :dance, :timing, :partnering, steps_attributes: [:id, :count, :foot, :foot_position, :footwork, :description, :_destroy])
     end
 end

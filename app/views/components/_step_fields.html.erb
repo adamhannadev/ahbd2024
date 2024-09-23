@@ -7,9 +7,9 @@
         <%= f.label :foot %>
         <%= f.text_field :foot %>
         <%= f.label :foot_position %>
-        <%= f.collection_select :foot_position, FootPosition.all, :id, :name %>
+        <%= f.collection_select :foot_position, FootPosition.all, :name, :name %>
         <%= f.label :footwork %>
-        <%= f.collection_select :footwork, Footwork.all, :id, :name %>
+        <%= f.collection_select :footwork, Footwork.all, :name, :name %>
       </div>
     </div>
     <div class="ui bottom attached button">

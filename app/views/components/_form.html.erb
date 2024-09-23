@@ -1,4 +1,4 @@
-<%= form_with(model: @component, local: true, class: "ui form", data: { controller: "nested-form" })  do |form| %>
+<%= form_with(model: @component, local: true, class: "ui form")  do |form| %>
   <% if component.errors.any? %>
     <div class="ui warning message">
       <h2><%= pluralize(component.errors.count, "error") %> prohibited this component from being saved:</h2>
@@ -38,9 +38,6 @@
     <%= form.text_field :level %>
   </div>
 
-
-<div data-controller="steps" data-step-target="output"></div>
-
   <div class="field">
     <%= form.label :dance, style: "display: block" %>
       <div class="ui selection dropdown">
@@ -71,22 +68,18 @@
     </tbody>
   </table>
 <!-- TODO: Add new step to component somehow. -->
-  <%= form.label :steps %>
-  
-    <div data-nested-form-target="container">
+    <div>
       <div class="ui four cards">
       <%= form.fields_for :steps do |step_form| %>
         <%= render 'step_fields', f: step_form %>
       <% end %>
+      </div>
     </div>
-    <%= link_to 'Add Step', '#', data: { action: "nested-form#add" } %>  
-    <template data-nested-form-target="template">
-      <%= form.fields_for :steps, Step.new, child_index: "NEW_RECORD" do |step_form| %>
-        <%= render 'step_fields', f: step_form %>
-      <% end %>
-    </template>
-  </div>
-
+    <div class="ui four cards">
+      <%= form.fields_for :steps, Step.new do |form| %>
+      <%= render 'step_fields', f: form %>
+    <% end %>
+    </div>
   <div class="field">
     <%= form.submit class: "ui button", style: "margin-top:1rem;" %>
   </div>
