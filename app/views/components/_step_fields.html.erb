@@ -2,14 +2,28 @@
     <div class="content">
       <div class="header"></div>
       <div class="description">
-        <%= f.label :count %>
-        <%= f.text_field :count %>
-        <%= f.label :foot %>
-        <%= f.text_field :foot %>
-        <%= f.label :foot_position %>
-        <%= f.collection_select :foot_position, FootPosition.all, :name, :name %>
-        <%= f.label :footwork %>
-        <%= f.collection_select :footwork, Footwork.all, :name, :name %>
+        <div class="ui field">
+          <%= f.label :count %>
+          <%= f.text_field :count %>
+        </div>
+        <div class="ui field row">
+          <div class="ui four columns">
+            <%= f.label :foot, "Right" %>
+            <%= f.radio_button :foot, "Right" %>
+          </div>
+          <div class="ui four columns">
+            <%= f.label :foot, "Left" %>
+            <%= f.radio_button :foot, "Left" %>
+          </div>
+        </div>
+        <div class="ui field">
+          <%= f.label :foot_position %>
+          <%= f.collection_select :foot_position, FootPosition.all, :name, :name %>
+        </div>
+        <div class="field">
+          <%= f.label :footwork %>
+          <%= f.collection_select :footwork, Footwork.all, :name, :name %>
+        </div>
       </div>
     </div>
     <div class="ui bottom attached button">

@@ -67,7 +67,7 @@
       <% end %>
     </tbody>
   </table>
-<!-- TODO: Add new step to component somehow. -->
+  <div data-controller="nested-form">
     <div>
       <div class="ui four cards">
       <%= form.fields_for :steps do |step_form| %>
@@ -75,11 +75,15 @@
       <% end %>
       </div>
     </div>
-    <div class="ui four cards">
+
+    <div class="ui button" data-action="click->nested-form#showNew">Add New</div>
+
+    <div class="ui four cards" data-nested-form-target="new">
       <%= form.fields_for :steps, Step.new do |form| %>
       <%= render 'step_fields', f: form %>
     <% end %>
     </div>
+  </div>
   <div class="field">
     <%= form.submit class: "ui button", style: "margin-top:1rem;" %>
   </div>
