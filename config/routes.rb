@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :steps
   resources :components
   resources :contacts
+  resources :lessons
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

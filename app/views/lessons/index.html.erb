@@ -1,0 +1,20 @@
+<%= render "shared/message" %>
+
+<h1>Lessons</h1>
+
+<table class="ui table">
+    <thead>
+        <th>Lesson Time</th>
+        <th>Plan</th>
+        <th>Status</th>
+    </thead>
+    <tbody>
+        <% @lessons.each do |l| %>
+        <tr>
+            <td><%= l.lesson_time.to_fs(:long_ordinal) %></td>
+            <td><%= l.plan %></td>
+            <td><%= l.status %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
