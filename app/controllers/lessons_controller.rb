@@ -56,11 +56,6 @@ class LessonsController < ApplicationController
         format.json { head :no_content }
       end
     end
-
-    # SHOW Calendar Week View
-    def calendar
-      @lessons = Lesson.all
-    end
   
     private
       # Use callbacks to share common setup or constraints between actions.

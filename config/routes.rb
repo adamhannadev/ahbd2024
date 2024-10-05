@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :lessons
 
 
-  get "/calendar" => "lessons#calendar"
+  get "/calendar" => "calendar#index"
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

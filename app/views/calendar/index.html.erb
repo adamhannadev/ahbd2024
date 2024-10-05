@@ -1,0 +1,15 @@
+<table class="ui table">
+    <% generate_time_slots.each do |time| %>
+    <tr style="height:6rem;">
+        <td id="<%= time %>">
+            <%= time.to_fs(:twelve_hour) %>
+        </td>
+        <td>
+            <% @lessons.each do |l| %>
+                <%= l.lesson_time == time ? l.lesson_time.to_fs(:twelve_hour) : "" %>
+            <% end %>
+        </td>
+    </tr>
+    <% end %>
+</table>
+
