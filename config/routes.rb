@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :foot_positions
   resources :steps
   resources :components
+  resources :contacts
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
