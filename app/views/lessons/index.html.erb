@@ -2,19 +2,25 @@
 
 <h1>Lessons</h1>
 
-<table class="ui table">
+<table class="ui table" data-controller="active-table">
     <thead>
         <th>Lesson Time</th>
         <th>Plan</th>
         <th>Status</th>
+        <th></th>
+        <th></th>
     </thead>
     <tbody>
         <% @lessons.each do |l| %>
-        <tr>
+        <tr id="<%= l.id %>" data-model="<%= l.model_name.to_s.downcase.pluralize %>" data-action="click->active-table#show mouseover->active-table#active mouseout->active-table#inactive">
             <td><%= l.lesson_time.to_fs(:long_ordinal) %></td>
             <td><%= l.plan %></td>
             <td><%= l.status %></td>
+            <td><%= button_to "Delete", lesson_path(l), method: :delete, class: "ui button" %> </td>
+            <td></td>
         </tr>
         <% end %>
     </tbody>
 </table>
+
+<%= link_to "New Lesson", new_lesson_path, class: "ui button" %>

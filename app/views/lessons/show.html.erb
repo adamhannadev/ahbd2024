@@ -1,0 +1,9 @@
+<div class="ui fluid raised card">
+    <div class="content">
+      <div class="header"><%= @lesson.lesson_time.to_fs(:long) %></div>
+      <div class="meta"><%= @lesson.status %></div>
+      <div class="description">
+        <%= @lesson.plan %>
+      </div>
+    </div>
+  </div>
