@@ -13,6 +13,7 @@ class LessonsController < ApplicationController
     # GET /lessons/new
     def new
       @lesson = Lesson.new
+      # TODO: Add @students and @teachers filters for Contact model.
     end
   
     # GET /lessons/1/edit
@@ -65,7 +66,7 @@ class LessonsController < ApplicationController
   
       # Only allow a list of trusted parameters through.
       def lesson_params
-        params.require(:lesson).permit(:lesson_time, :plan, :status)
+        params.require(:lesson).permit(:lesson_time, :plan, :status, :student, :teacher)
       end
   end
   

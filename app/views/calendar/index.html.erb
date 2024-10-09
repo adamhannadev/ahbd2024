@@ -1,6 +1,6 @@
 <table class="ui table">
     <% generate_time_slots.each do |time| %>
-    <tr style="height:6rem;">
+    <tr>
         <td id="<%= time %>">
             <%= time.to_fs(:twelve_hour) %>
         </td>

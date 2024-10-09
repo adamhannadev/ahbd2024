@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_05_074308) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_09_194551) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,6 +53,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_05_074308) do
     t.string "status", default: "booked"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_id"
+    t.integer "teacher_id"
   end
 
   create_table "steps", force: :cascade do |t|
