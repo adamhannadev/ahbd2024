@@ -25,14 +25,15 @@
     <%= form.label :status %>
     <%= form.text_field :status %>
   </div>
-<!-- TODO: Add view helpers to access student and teacher filters for contacts. -->
+  
   <div class="field">
-    <%= form.label :student %>
-    
+    <%= form.label :student_id %>
+    <%= form.collection_select(:student_id, @students, :id, :first_name, prompt: 'Please select.') %>
   </div>
 
   <div class="field">
-    <%= form.label :teacher %>
+    <%= form.label :teacher_id %>
+    <%= form.collection_select(:teacher_id, @teachers, :id, :first_name, prompt: 'Please select.') %>
     
   </div>
 

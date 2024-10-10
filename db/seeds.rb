@@ -82,3 +82,16 @@ end
         component: Component.find(rand(Component.first.id..Component.last.id))
     )
 end
+
+roles = ["Teacher", "Student", "Prospect"]
+
+6.times do
+    Contact.create(
+        last_name: Faker::Lorem::word,
+        first_name: Faker::Lorem::word,
+        email: "adam.s.hanna@gmail.com",
+        phone: Faker::PhoneNumber.phone_number,
+        birthdate: Date.current,
+        role: roles[rand(0..2)]
+    )
+end
