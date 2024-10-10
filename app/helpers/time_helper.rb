@@ -11,6 +11,6 @@ module TimeHelper
       end
   
       times_array
-    end
+    end  
   end
   

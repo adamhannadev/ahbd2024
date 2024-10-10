@@ -95,3 +95,22 @@ roles = ["Teacher", "Student", "Prospect"]
         role: roles[rand(0..2)]
     )
 end
+
+students = Contact.where(role: "Student")
+teachers = Contact.where(role: "Teacher")
+
+
+def round_time(time)
+    Time.at((time.to_f / 1800).floor * 1800)
+end
+
+status = ["Booked", "Cancelled", "Complete", "Paid"]
+6.times do
+    Lesson.create(
+        lesson_time: round_time(Faker::Time.backward(days: 0, period: :afternoon)),
+        plan: Faker::Lorem::sentence,
+        status: status[rand(0..3)],
+        student: students.first,
+        teacher: teachers.first
+    )
+end
