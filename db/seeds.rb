@@ -10,79 +10,80 @@
 
 require 'faker'
 
-# Create all the basic footworks.
-fw = [
-    "Ball",
-    "Ball Flat",
-    "Flat",
-    "Heel",
-    "Toe",
-    "Toe Heel",
-    "Inside Edge",
-    "Inside Edge of Ball of Foot"
-]
-fw.each do |f|
-    Footwork.create(name: f)
-end
+# # Create all the basic footworks.
+# fw = [
+#     "Ball",
+#     "Ball Flat",
+#     "Flat",
+#     "Heel",
+#     "Toe",
+#     "Toe Heel",
+#     "Inside Edge",
+#     "Inside Edge of Ball of Foot"
+# ]
+# fw.each do |f|
+#     Footwork.create(name: f)
+# end
 
-# Create all the basic foot positions.
-fp = [
-    "Back",
-    "Forward",
-    "Side",
-    "Close",
-    "Forward and Slightly Side",
-    "Side and Slightly Forward",
-    "Diagonally Forward",
-    "Across",
-    "Behind in 5th Position"
-]
-fp.each do |f|
-    FootPosition.create(name: f)
-end
+# # Create all the basic foot positions.
+# fp = [
+#     "Back",
+#     "Forward",
+#     "Side",
+#     "Close",
+#     "Forward and Slightly Side",
+#     "Side and Slightly Forward",
+#     "Diagonally Forward",
+#     "Across",
+#     "Behind in 5th Position"
+# ]
+# fp.each do |f|
+#     FootPosition.create(name: f)
+# end
 
-# Create some mock Components.
+# # Create some mock Components.
 
-ls = [
-    "Introductory",
-    "Associate Bronze",
-    "Full Bronze",
-    "Associate Silver",
-    "Full Silver",
-    "Associate Gold",
-    "Full Gold",
-    "Open"
-]
+# ls = [
+#     "Introductory",
+#     "Associate Bronze",
+#     "Full Bronze",
+#     "Associate Silver",
+#     "Full Silver",
+#     "Associate Gold",
+#     "Full Gold",
+#     "Open"
+# ]
 
-dnc = [
-    "Salsa",
-    "Bachata",
-    "Kizomba",
-    "West Coast Swing"
-]
+# dnc = [
+#     "Salsa",
+#     "Bachata",
+#     "Kizomba",
+#     "West Coast Swing"
+# ]
 
-6.times do
-    Component.create(
-        name: Faker::Lorem::word,
-        role: rand(2) == 1 ? "Leader" : "Follower",
-        level: ls[rand(7)],
-        dance: dnc[rand(3)],
-        partnering: Faker::Lorem::paragraph
-    )
-end
+# 6.times do
+#     Component.create(
+#         name: Faker::Lorem::word,
+#         role: rand(2) == 1 ? "Leader" : "Follower",
+#         level: ls[rand(7)],
+#         dance: dnc[rand(3)],
+#         partnering: Faker::Lorem::paragraph
+#     )
+# end
     
 
-# Create some mock Steps.
-6.times do
-    Step.create(
-        count: rand(1..3),
-        foot: rand(2) == 1 ? "Left" : "Right",
-        footwork: Footwork.find(rand(1..8)).name,
-        foot_position: FootPosition.find(rand(1..9)).name,
-        component: Component.find(rand(Component.first.id..Component.last.id))
-    )
-end
+# # Create some mock Steps.
+# 6.times do
+#     Step.create(
+#         count: rand(1..3),
+#         foot: rand(2) == 1 ? "Left" : "Right",
+#         footwork: Footwork.find(rand(1..8)).name,
+#         foot_position: FootPosition.find(rand(1..9)).name,
+#         component: Component.find(rand(Component.first.id..Component.last.id))
+#     )
+# end
 
+# Create mock contacts.
 roles = ["Teacher", "Student", "Prospect"]
 
 6.times do
@@ -99,7 +100,7 @@ end
 students = Contact.where(role: "Student")
 teachers = Contact.where(role: "Teacher")
 
-
+# Create mock lessons.
 def round_time(time)
     Time.at((time.to_f / 1800).floor * 1800)
 end

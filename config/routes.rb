@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :figures
   resources :footworks
   resources :foot_positions
   resources :steps

@@ -1,0 +1,42 @@
+<%= form_with(model: figure) do |form| %>
+  <% if figure.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(figure.errors.count, "error") %> prohibited this figure from being saved:</h2>
+
+      <ul>
+        <% figure.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :level, style: "display: block" %>
+    <%= form.text_field :level %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :manref, style: "display: block" %>
+    <%= form.text_field :manref %>
+  </div>
+
+  <div>
+    <%= form.label :dance, style: "display: block" %>
+    <%= form.text_field :dance %>
+  </div>
+
+  <div>
+    <%= form.label :style, style: "display: block" %>
+    <%= form.text_field :style %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
