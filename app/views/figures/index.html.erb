@@ -2,13 +2,25 @@
 
 <h1>Figures</h1>
 
-<div id="figures">
-  <% @figures.each do |figure| %>
-    <%= render figure %>
-    <p>
-      <%= link_to "Show this figure", figure %>
-    </p>
-  <% end %>
+<div id="figures_table">
+<table class="ui table">
+  <thead>
+    <th>Level</th>
+    <th>Name</th>
+    <th>Style</th>
+    <th>Dance</th>
+  </thead>
+  <tbody>
+    <% @figures.each do |f| %>
+    <tr>
+      <td><%= f.level %></td>
+      <td><%= f.name %></td>
+      <td><%= f.style %></td>
+      <td><%= f.dance %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 </div>
 
 <%= link_to "New figure", new_figure_path %>

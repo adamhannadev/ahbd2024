@@ -4,6 +4,7 @@ class LessonsController < ApplicationController
     # GET /lessons or /lessons.json
     def index
       @lessons = Lesson.all
+      @teachers = Contact.teachers
     end
   
     # GET /lessons/1 or /lessons/1.json
