@@ -1,5 +1,12 @@
 class LessonsController < ApplicationController
     before_action :set_lesson, only: %i[ show edit update destroy ]
+
+    # Get /lessons/(teacher)
+    def by_teacher
+      teacher = params[:teacher_id]
+      @lessons = Lesson.where(teacher: teacher)
+      @teacher = Contact.where(id: teacher).first
+    end
   
     # GET /lessons or /lessons.json
     def index
@@ -17,7 +24,7 @@ class LessonsController < ApplicationController
       @students = Contact.students
       @teachers = Contact.teachers
     end
-  
+
     # GET /lessons/1/edit
     def edit
     end

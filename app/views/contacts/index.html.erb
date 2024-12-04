@@ -2,7 +2,7 @@
 
 <h1 class="ui center aligned header">Contacts</h1>
 
-<table class="ui table">
+<table class="ui table" data-controller="active-table">
 <thead>
     <th>First Name</th>
     <th>Last Name</th>
@@ -10,12 +10,10 @@
     <th>Email</th>
     <th>Birthdate</th>
     <th>Role</th>
-    <th></th>
-    <th></th>
 </thead>
 <tbody>
-    <% @contacts.each do |c| %>
-    <tr>
+    <% @prospects.each do |c| %>
+    <tr data-model="<%= c.model_name.to_s.downcase.pluralize %>" id="<%= c.id %>" data-action="click->active-table#show mouseover->active-table#active mouseout->active-table#inactive">
         <td><%= c.first_name %></td>
         <td><%= c.last_name %></td>
         <td><%= c.phone %></td>
@@ -26,3 +24,53 @@
     <% end %>
 </tbody>
 </table>
+
+<table class="ui table">
+    <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Birthdate</th>
+        <th>Role</th>
+        <th></th>
+        <th></th>
+    </thead>
+    <tbody>
+        <% @teachers.each do |c| %>
+        <tr>
+            <td><%= c.first_name %></td>
+            <td><%= c.last_name %></td>
+            <td><%= c.phone %></td>
+            <td><%= c.email %></td>
+            <td><%= c.birthdate %></td>
+            <td><%= c.role %></td>
+        </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+    <table class="ui table">
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Birthdate</th>
+            <th>Role</th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            <% @students.each do |c| %>
+            <tr>
+                <td><%= c.first_name %></td>
+                <td><%= c.last_name %></td>
+                <td><%= c.phone %></td>
+                <td><%= c.email %></td>
+                <td><%= c.birthdate %></td>
+                <td><%= c.role %></td>
+            </tr>
+            <% end %>
+        </tbody>
+        </table>

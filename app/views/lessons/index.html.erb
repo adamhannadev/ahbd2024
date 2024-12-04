@@ -28,7 +28,6 @@
     <div class="row">
         <% @teachers.each do |t| %>
         <div class="column">
-
             <div class="ui card">
                 <div class="content">
                   <a class="header"><%= t.first_name + " " + t.last_name %></a>
@@ -57,6 +56,30 @@
         </div>
         <% end %>
     </div>
+</div>
+
+
+<div class="ui card">
+  <div class="content">
+    <a class="header">Teacher One</a>
+    <div class="meta">
+      <span class="date">Teacher One Email</span>
+    </div>
+    <div class="description">
+      <div class="ui relaxed divided list">
+          <div class="item sub header">Available</div>
+          <% @lessons.each do |l| %>
+          <div class="item"><%= l.lesson_time.to_fs(:short) %> - <%= l.status %></div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      5 Lessons
+    </a>
+  </div>
 </div>
 
 <br>

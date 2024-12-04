@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="footworks"
+// Connects to data-controller="active_table"
 export default class extends Controller {
 
   inactive(event){
@@ -12,6 +12,6 @@ export default class extends Controller {
   }
 
   show(event){
-   window.location = "/" + event.currentTarget.dataset.model + "/" +event.currentTarget.id
+   window.location = "/" + event.currentTarget.dataset.model + "/" + event.currentTarget.id
   }
 }

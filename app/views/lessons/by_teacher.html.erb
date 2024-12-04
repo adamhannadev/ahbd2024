@@ -1,0 +1,6 @@
+<%= @teacher.last_name %>
+
+
+<%= @lessons.each do |l| %>
+<div class="item"><%= l.lesson_time.to_fs(:short) %></div>
+<% end %>

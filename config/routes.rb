@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :contacts
   resources :lessons
 
+  get "/teacher" => "lessons#by_teacher"
 
   get "/calendar" => "calendar#index"
 
