@@ -37,12 +37,11 @@
                   <div class="description">
                     <div class="ui relaxed divided list">
                         <div class="item sub header">Available</div>
-                        <div class="item">1:00pm - 2:00pm</div>
-                        <div class="item">3:00pm - 4:00pm</div>
-                        <div class="item">4:00pm - 5:00pm</div>
+                          <% t.lessons_taught.each do |l| %> 
+                          <%= l.lesson_time.to_fs(:short) %><br>
+                        <% end %>
                         <div class="item sub header">Booked</div>
-                        <div class="item">10:00am - 11:00am</div>
-                        <div class="item">11:00am - 12:00pm</div>
+
                     </div>
                   </div>
                 </div>
@@ -56,30 +55,6 @@
         </div>
         <% end %>
     </div>
-</div>
-
-
-<div class="ui card">
-  <div class="content">
-    <a class="header">Teacher One</a>
-    <div class="meta">
-      <span class="date">Teacher One Email</span>
-    </div>
-    <div class="description">
-      <div class="ui relaxed divided list">
-          <div class="item sub header">Available</div>
-          <% @lessons.each do |l| %>
-          <div class="item"><%= l.lesson_time.to_fs(:short) %> - <%= l.status %></div>
-          <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="extra content">
-    <a>
-      <i class="user icon"></i>
-      5 Lessons
-    </a>
-  </div>
 </div>
 
 <br>
