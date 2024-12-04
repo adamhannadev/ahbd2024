@@ -37,11 +37,11 @@
                   <div class="description">
                     <div class="ui relaxed divided list">
                         <div class="item sub header">Available</div>
-                          <% t.lessons_taught.each do |l| %> 
-                          <%= l.lesson_time.to_fs(:short) %><br>
-                        <% end %>
-                        <div class="item sub header">Booked</div>
 
+                        <div class="item sub header">Booked</div>
+                        <% t.lessons_taught.each do |l| %> 
+                        <%= l.lesson_time.to_fs(:short) %><br>
+                      <% end %>
                     </div>
                   </div>
                 </div>

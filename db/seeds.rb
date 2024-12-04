@@ -86,16 +86,46 @@ require 'faker'
 # Create mock contacts.
 roles = ["Teacher", "Student", "Prospect"]
 
-6.times do
-    Contact.create(
-        last_name: Faker::Lorem::word,
-        first_name: Faker::Lorem::word,
-        email: "adam.s.hanna@gmail.com",
-        phone: Faker::PhoneNumber.phone_number,
-        birthdate: Date.current,
-        role: roles[rand(0..2)]
-    )
-end
+Contact.create(
+    last_name: "Hanna",
+    first_name: "Adam",
+    email: "adam.s.hanna@gmail.com",
+    phone: Faker::PhoneNumber.phone_number,
+    birthdate: rand(Date.parse('1950-01-01')..Date.parse('2000-12-31')),
+    role: "Teacher"
+)
+Contact.create(
+    last_name: "Kottova",
+    first_name: "Tyna",
+    email: "tyna@kottova.com",
+    phone: Faker::PhoneNumber.phone_number,
+    birthdate: rand(Date.parse('1950-01-01')..Date.parse('2000-12-31')),
+    role: "Teacher"
+)
+Contact.create(
+    last_name: "Norman",
+    first_name: "Kami",
+    email: "kami@gmail.com",
+    phone: Faker::PhoneNumber.phone_number,
+    birthdate: rand(Date.parse('1950-01-01')..Date.parse('2000-12-31')),
+    role: "Student"
+)
+Contact.create(
+    last_name: "Gould",
+    first_name: "Linda",
+    email: "linda@gmail.com",
+    phone: Faker::PhoneNumber.phone_number,
+    birthdate: rand(Date.parse('1950-01-01')..Date.parse('2000-12-31')),
+    role: "Student"
+)
+Contact.create(
+    last_name: "Gordon",
+    first_name: "Ramsay",
+    email: "gram@gmail.com",
+    phone: Faker::PhoneNumber.phone_number,
+    birthdate: rand(Date.parse('1950-01-01')..Date.parse('2000-12-31')),
+    role: "Student"
+)
 
 students = Contact.where(role: "Student")
 teachers = Contact.where(role: "Teacher")
@@ -106,12 +136,39 @@ def round_time(time)
 end
 
 status = ["Booked", "Cancelled", "Complete", "Paid"]
-6.times do
-    Lesson.create(
-        lesson_time: round_time(Faker::Time.backward(days: 0, period: :afternoon)),
-        plan: Faker::Lorem::sentence,
-        status: status[rand(0..3)],
-        student: students.first,
-        teacher: teachers.first
-    )
-end
+
+Lesson.create(
+    lesson_time: round_time(Faker::Time.backward(days: 0, period: :afternoon)),
+    plan: Faker::Lorem::sentence,
+    status: status[rand(0..3)],
+    student: students.first,
+    teacher: teachers.second
+)
+Lesson.create(
+    lesson_time: round_time(Faker::Time.backward(days: 0, period: :afternoon)),
+    plan: Faker::Lorem::sentence,
+    status: status[rand(0..3)],
+    student: students.second,
+    teacher: teachers.first
+)
+Lesson.create(
+    lesson_time: round_time(Faker::Time.backward(days: 0, period: :afternoon)),
+    plan: Faker::Lorem::sentence,
+    status: status[rand(0..3)],
+    student: students.second,
+    teacher: teachers.first
+)
+Lesson.create(
+    lesson_time: round_time(Faker::Time.backward(days: 0, period: :afternoon)),
+    plan: Faker::Lorem::sentence,
+    status: status[rand(0..3)],
+    student: students.third,
+    teacher: teachers.first
+)
+Lesson.create(
+    lesson_time: round_time(Faker::Time.backward(days: 0, period: :afternoon)),
+    plan: Faker::Lorem::sentence,
+    status: status[rand(0..3)],
+    student: students.second,
+    teacher: teachers.second
+)
